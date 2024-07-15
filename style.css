@@ -2,7 +2,8 @@
     display: flex;
     gap: 16px
 }
-.btn .item{
+.btn .item,
+.load{
     background-color: #ff7675;
     padding: 4px 20px;
     border-radius: 4px;

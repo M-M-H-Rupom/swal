@@ -275,4 +275,33 @@
             // console.log(info);
         })()
     })
+
+    $('.loading1').on('click',function(){
+        $(this).LoadingOverlay('show')
+    })
+    $('.loading2').on('click',function(){
+        $('.loading1').LoadingOverlay("hide")
+    })
+    $('.loading3').on('click', function() {
+        $.LoadingOverlay("show")
+        alert("ok")            
+        $.LoadingOverlay("hide")
+    });
+    $('.loading4').on('click',function(){
+        $.ajax({
+            url: localize_data.ajaxurl,
+            type: "POST",
+            data: {
+                'action' : 'load_data',
+                nonce : localize_data.nonce
+            },
+            success: function (response) {
+                
+            },
+            error : function(){
+
+            } 
+        });
+    })
+    console.log(localize_data.nonce);
 })(jQuery);
